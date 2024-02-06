@@ -1,11 +1,27 @@
 <?php 
 ?>
+
+<header>
+    <img src="airpods.png" alt="html image" width="60"/>
+</header>
+
 <html> 
     <head>
-        <title>Luka's Tech Shop</title>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="lukas_tech_shop.css"/>
         </head>
         <body>
         <h1>Home Page</h1>
-        <h1>We sell tech and tech accessories! Buy our premium wireless earbuds, laptop stands, portable phone chargers, bluetooth keyboards, and laptop backpacks!</h1>
+        <h2>Luka's Tech Shop</h2>
+        <h3>We sell tech and tech accessories! Buy some of our excellent products, such as...</h3>
+        <ul>
+            <li>Wireless Earbuds</li>
+            <li>Laptop Stands</li>
+            <li>Portable Phone Chargers</li>
+            <li>Bluetooth Keyboards</li>
+            <li>Laptop Backpacks</li>
+        </ul>
+        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
         </body>
 </html>
+

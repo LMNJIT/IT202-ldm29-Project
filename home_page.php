@@ -14,7 +14,8 @@
             <body>
             <h1>Home Page</h1>
             <h2>Luka's Tech Shop</h2>
-            <h3>We sell tech and tech accessories! Buy some of our excellent products, such as...</h3>
+            <h3>Looking for tech or tech accessories? You've come
+                to the right place! Buy some of our excellent products, such as:</h3>
             <ul>
                 <li>Wireless Earbuds</li>
                 <li>Laptop Stands</li>
@@ -22,6 +23,7 @@
                 <li>Bluetooth Keyboards</li>
                 <li>Laptop Backpacks</li>
             </ul>
+            <p>Store Description + 4 Images</p>
         </main>
         <footer>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>

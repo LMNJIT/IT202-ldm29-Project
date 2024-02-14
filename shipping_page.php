@@ -9,6 +9,13 @@
         <body>
             <h1>Shipping Page</h1>
         </body>
-        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
+        <footer>
+        <h4> Navigation </h4>
+        <nav>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
+        </nav>
+            <p>By Luka Mayer</p>
+        </footer>
 </html>
 

@@ -1,21 +1,77 @@
-h1, h2, h3, body {
+body {
+    border: 2px solid rgb(21, 35, 95);    
+    border-radius: 25px;
+    /* box-shadow: 5px 5px 0 0; */
+    margin: 5em auto;
+    padding: 25px;
+    background: whitesmoke;
+    width: 90%;
+    height: 77%;
+}
+
+p, h1, h2, h3, body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-h1 {
-    font-size: 40px
+header img {
+    float: left;
 }
 
-h2 {
-    font-size: 30px;
+header h1 {
+    font-size: 220%;
+    text-align: center;
+    font-style: bold;
+    margin-bottom: .25em;
 }
+
+header h2 {
+    text-align: center;
+    font-style: italic;
+}
+
+footer {
+    margin-top: 2em;
+    border-top: 2px solid gray;
+    padding-top: auto;
+}
+
 
 h3 {
-    font-size: 20px;
+    font-size: 125%;
 }
 
-body {
-    border: 1px solid rgb(21, 35, 95);
-    margin: 12.5px;
-    padding: 25px;
+ul {
+    margin: 0 0 1.5em;
+}
+
+footer {
+    margin-top: 1em;
+}
+
+footer p {
+    font-size: 80%;
+}
+
+/* Unvisited */
+a:link {
+    color: blue;
+}
+
+/* Focus-Hover */
+a:focus, a:hover {
+    color: purple;
+}
+
+/* Active */
+a:active {
+    color: red;
+}
+
+/* Visited */
+a:visited {
+    color: darkgray;
+}
+
+html {
+    background-image: linear-gradient(to bottom, lightslategray 0%, rgba(100, 210, 238, 0.986));
 }

@@ -5,7 +5,7 @@ body {
     margin: 1em auto;
     padding: 25px;
     width: 95%;
-    height: 90%;
+    height: auto;
 }
 
 p, h1, h2, h3, body {
@@ -29,6 +29,7 @@ footer {
     margin-top: 2em;
     border-top: 2px solid gray;
     padding-top: auto;
+    font-size: 90%;
 }
 
 h3 {
@@ -37,14 +38,6 @@ h3 {
 
 ul {
     margin: 0 0 1.5em;
-}
-
-footer {
-    margin-top: 1em;
-}
-
-footer p {
-    font-size: 80%;
 }
 
 /* Unvisited */

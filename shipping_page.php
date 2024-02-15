@@ -64,25 +64,24 @@
                 <input type="number" name="order_number"
                     value="<?php echo htmlspecialchars($order_number); ?>" />
                 <br>
-            <h3>Package Dimensions</h3>
+            <h3>Package Dimensions (in inches)</h3>
                 <label>Package Length: </label>
-                <input type="number" name="length"
+                <input type="number" step="any" name="length"
                     value="<?php echo htmlspecialchars($length); ?>" />
                 <br>
                 <label>Package Width: </label>
-                <input type="number" name="width"
+                <input type="number" step="any" name="width"
                     value="<?php echo htmlspecialchars($width); ?>" />
                 <br>
                 <label>Package Height: </label>
-                <input type="number" name="height"
+                <input type="number" step="any" name="height"
                     value="<?php echo htmlspecialchars($height); ?>" />
                 <br>
             <h3>Total Declared Value of Package</h3>
                 <label>Package Value: </label>
-                <input type="number" name="package_value"
+                <input type="number" step="any" name="package_value"
                     value="<?php echo htmlspecialchars($package_value); ?>" />
                 <br>
-
                 <input type="submit" value="Submit"/>
                 <br>
             </form>

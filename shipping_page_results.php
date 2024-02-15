@@ -1,15 +1,15 @@
 <?php
-    $name = filter_input(INPUT_POST, 'name',  FILTER_VALIDATE_FLOAT);
-    $street_address = filter_input(INPUT_POST, 'street_address',  FILTER_VALIDATE_FLOAT);
-    $city = filter_input(INPUT_POST, 'city',  FILTER_VALIDATE_FLOAT);
+    $name = filter_input(INPUT_POST, 'name',  FILTER_SANITIZE_STRING);
+    $street_address = filter_input(INPUT_POST, 'street_address',  FILTER_SANITIZE_STRING);
+    $city = filter_input(INPUT_POST, 'city',  FILTER_SANITIZE_STRING);
     $state = filter_input(INPUT_POST, 'state',  FILTER_SANITIZE_STRING);
     $zip_code = filter_input(INPUT_POST, 'zip_code', FILTER_SANITIZE_STRING);
     $ship_date = filter_input(INPUT_POST, 'ship_date', FILTER_SANITIZE_STRING);
     $order_number = filter_input(INPUT_POST, 'order_number', FILTER_VALIDATE_FLOAT);
-    $length = filter_input(INPUT_POST, 'length', FILTER_VALIDATE_INT);
-    $width = filter_input(INPUT_POST, 'width', FILTER_VALIDATE_INT);
-    $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_INT);
-    $package_value = filter_input(INPUT_POST, 'package_value', FILTER_VALIDATE_INT);
+    $length = filter_input(INPUT_POST, 'length', FILTER_VALIDATE_FLOAT);
+    $width = filter_input(INPUT_POST, 'width', FILTER_VALIDATE_FLOAT);
+    $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_FLOAT);
+    $package_value = filter_input(INPUT_POST, 'package_value', FILTER_VALIDATE_FLOAT);
 
     function validateState($state) {
         $state_list = array("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY");
@@ -106,37 +106,23 @@
         <!-- rework this so it displays label -->
         <h3>Package Information</h3>
         <h4>From Address: 141 Summit St, Newark, NJ 07103<h1>
-        <h4>To Address:<h4>
-        <label>First and Last Name: </label>
-        <span><?php echo ($name); ?></span>
-        <br>
-        <label>Street Address: </label>
-        <span><?php echo ($street_address); ?></span>
-        <br>
-        <label>City: </label>
-        <span><?php echo ($city); ?></span>
-        <br>
-        <label>State: </label>
-        <span><?php echo ($state); ?></span>
-        <br>
-        <label>Zip Code: </label>
-        <span><?php echo ($zip_code); ?></span>
+        <label>To Address:</label><span><?php echo (' ' . $name . ', ' . $street_address . ', ' . $city . ', ' . $state . ' ' . $zip_code); ?></span>
         <br>
         <h4>Package Dimensions & Value</h4>
         <label>Package Length: </label>
-        <span><?php echo ($length); ?></span>
+        <span><?php echo ($length . ' inches'); ?></span>
         <br>
         <label>Package Width: </label>
-        <span><?php echo ($width); ?></span>
+        <span><?php echo ($width . ' inches'); ?></span>
         <br>
         <label>Package Height: </label>
-        <span><?php echo ($height); ?></span>
+        <span><?php echo ($height . ' inches'); ?></span>
         <br>
         <label>Package Value: </label>
-        <span><?php echo ($package_value); ?></span>
+        <span><?php echo ('$' . $package_value); ?></span>
         <br>
         <h4>Shipping Company: UPS</h4>
-        <h4>Shipping Class: Priority Male</h4>
+        <h4>Shipping Class: Priority Mail</h4>
         <h4>Tracking Number: 1Z 123 X56 03 1234 5679</h4>
         <img src="images/ups_track.png" alt="html image" width = auto/>
         <br>

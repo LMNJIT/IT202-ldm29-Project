@@ -103,20 +103,12 @@
         </head>
     </head>
     <body>
-        <!-- rework this so it displays label -->
         <h3>Package Information</h3>
         <h4>From Address: 141 Summit St, Newark, NJ 07103<h1>
         <label>To Address:</label><span><?php echo (' ' . $name . ', ' . $street_address . ', ' . $city . ', ' . $state . ' ' . $zip_code); ?></span>
         <br>
         <h4>Package Dimensions & Value</h4>
-        <label>Package Length: </label>
-        <span><?php echo ($length . ' inches'); ?></span>
-        <br>
-        <label>Package Width: </label>
-        <span><?php echo ($width . ' inches'); ?></span>
-        <br>
-        <label>Package Height: </label>
-        <span><?php echo ($height . ' inches'); ?></span>
+        <label>Dimensions (inches): </label><span><?php echo ($length . ' x ' . $width . ' x ' . $height); ?></span>
         <br>
         <label>Package Value: </label>
         <span><?php echo ('$' . $package_value); ?></span>

@@ -113,16 +113,30 @@ ldm29@njit.edu
     <body>
         <main>
             <!-- Display the results in a format similar to a UPS Shipping Label -->
-            <h5>LUKA'S TECH SHOP DATE: <span><?php echo ($ship_date); ?></span></h5>
-            <h5>732-102-6983</h5>
-            <h5>141 SUMMIT ST.</h5>
-            <h5>NEWARK, NJ, 07103</h5>
-            <h4>SHIP TO:</h4>
-            <h4><?php echo (strtoupper($name)); ?></span></h4>
-            <h4><?php echo (strtoupper($street_address)); ?></span></h4>
-            <h4><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span></h4>
-            <h4><?php echo ('UNITED STATES'); ?></span></h4>
-            <img src="images/ups_tracking_nextdayair.png" alt="html image" width = auto/>
+            <p class = "small">
+            LUKA'S TECH SHOP DATE: <span><?php echo ($ship_date); ?></span>
+            <br>
+            732-102-6983
+            <br>
+            141 SUMMIT ST.
+            <br>
+            NEWARK, NJ, 07103
+            <br>
+            <br>
+            SHIP TO:
+            <br>
+            <style>
+                <?php echo (strtoupper($name));?></span>
+            <style>
+            <br>
+            <?php echo (strtoupper($street_address)); ?></span>
+            <br>
+            <?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span>
+            <br>
+            <?php echo ('UNITED STATES'); ?></span>
+            </p>
+            <img src="images/ups_tracking_nextdayair.png" alt="html image" width="auto" height="auto" style="float: left; position: relative; left: -35px;"/>
+            <br>
             <h4>Package Dimensions & Value</h4>
             <label>Dimensions (inches): </label><span><?php echo ($length . ' x ' . $width . ' x ' . $height); ?></span>
             <br>

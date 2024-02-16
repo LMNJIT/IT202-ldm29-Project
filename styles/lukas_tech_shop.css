@@ -21,6 +21,10 @@ p, h1, h2, h3, body {
     font-family:'Poppins','Arial Narrow', Arial, sans-serif, 'Franklin Gothic Medium';
 }
 
+p.small {
+    line-height: 1;
+}
+
 header h1 {
     font-size: 220%;
     text-align: center;

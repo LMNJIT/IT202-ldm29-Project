@@ -125,9 +125,7 @@ ldm29@njit.edu
             <br>
             SHIP TO:
             <br>
-            <style>
                 <?php echo (strtoupper($name));?></span>
-            <style>
             <br>
             <?php echo (strtoupper($street_address)); ?></span>
             <br>

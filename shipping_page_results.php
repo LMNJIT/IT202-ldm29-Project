@@ -111,10 +111,16 @@ ldm29@njit.edu
         </head>
     </head>
     <body>
-        <h3>Package Information</h3>
-        <h4>From Address: 141 Summit St, Newark, NJ 07103<h1>
-        <label>To Address:</label><span><?php echo (' ' . $name . ', ' . $street_address . ', ' . $city . ', ' . $state . ' ' . $zip_code); ?></span>
-        <br>
+        <h5>LUKA'S TECH SHOP DATE: <span><?php echo ($ship_date); ?></span></h5>
+        <h5>732-102-6983</h5>
+        <h5>141 SUMMIT ST.</h5>
+        <h5>NEWARK, NJ, 07103</h5>
+        <h4>SHIP TO:</h4>
+        <h4><?php echo (strtoupper($name)); ?></span></h4>
+        <h4><?php echo (strtoupper($street_address)); ?></span></h4>
+        <h4><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span></h4>
+        <h4><?php echo ('UNITED STATES'); ?></span></h4>
+        <img src="images/ups_tracking_nextdayair.png" alt="html image" width = auto/>
         <h4>Package Dimensions & Value</h4>
         <label>Dimensions (inches): </label><span><?php echo ($length . ' x ' . $width . ' x ' . $height); ?></span>
         <br>
@@ -122,15 +128,10 @@ ldm29@njit.edu
         <span><?php echo ('$' . $package_value); ?></span>
         <br>
         <h4>Shipping Company: UPS</h4>
-        <h4>Shipping Class: Priority Mail</h4>
-        <h4>Tracking Number: 1Z 123 X56 03 1234 5679</h4>
-        <img src="images/ups_track.png" alt="html image" width = auto/>
+        <h4>Shipping Class: Next Day Air</h4>
         <br>
         <label>Order Number: </label>
         <span><?php echo ($order_number); ?></span>
-        <br>
-        <label>Ship Date: </label>
-        <span><?php echo ($ship_date); ?></span>
         <br>
     </body>
 

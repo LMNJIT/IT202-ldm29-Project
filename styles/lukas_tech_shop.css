@@ -14,6 +14,7 @@ body {
     padding: 25px;
     width: 95%;
     height: auto;
+    background-image: transparent;
 }
 
 p, h1, h2, h3, body {

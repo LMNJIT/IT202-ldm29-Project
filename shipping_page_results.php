@@ -95,7 +95,7 @@
 <html>
     <head>
         <title>Shipping Page</title>
-        <link rel="stylesheet" href="lukas_tech_shop.css"/>
+        <link rel="stylesheet" href="styles/lukas_tech_shop.css"/>
         </head>
         <header>
             <h1>Shipping Page Results</h1>

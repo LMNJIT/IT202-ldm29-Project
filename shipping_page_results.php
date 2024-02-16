@@ -110,39 +110,41 @@ ldm29@njit.edu
             <h1>Shipping Page Results</h1>
         </header>
     </head>
-    <body>
+    <body class="label">
         <main>
-            <!-- Display the results in a format similar to a UPS Shipping Label -->
-            <p class = "small">
-            LUKA'S TECH SHOP DATE: <span><?php echo ($ship_date); ?></span>
-            <br>
-            732-102-6983
-            <br>
-            141 SUMMIT ST.
-            <br>
-            NEWARK, NJ, 07103
-            <br>
-            <br>
-            SHIP TO:
-            <br>
-                <?php echo (strtoupper($name));?></span>
-            <br>
-            <?php echo (strtoupper($street_address)); ?></span>
-            <br>
-            <?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span>
-            <br>
-            <?php echo ('UNITED STATES'); ?></span>
+            <!-- Surround UPS label with a border -->
+            <div class="ups-label">
+            <p class="small" style="display: inline;">
+                LUKA'S TECH SHOP 
             </p>
-            <img src="images/ups_tracking_nextdayair.png" alt="html image" width="auto" height="auto" style="float: left; position: relative; left: -35px;"/>
+            <p class="small" style="display: inline; text-indent: 3em">
+                DATE: <span><?php echo ($ship_date); ?></span>
+            </p>
+                <p class="small">
+                    732-102-6983
+                    <br>
+                    141 SUMMIT ST.
+                    <br>
+                    NEWARK, NJ, 07103
+                    <br>
+                    SHIP TO:
+                </p>
+                <div style="float: right; width: auto">
+                    <p class="small" style="display: inline-block;">
+                        <span><?php echo (strtoupper($name));?></span><br>
+                        <span><?php echo (strtoupper($street_address)); ?></span><br>
+                        <span><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span><br>
+                        <span><?php echo ('UNITED STATES'); ?></span>
+                    </p>
+                </div>  
+                <img src="images/ups_tracking_nextdayair.png" alt="html image" width=auto height=auto style="margin: 1em 1em 1em 0; padding-top: 100px;"/>
+            </div>
             <br>
             <h4>Package Dimensions & Value</h4>
             <label>Dimensions (inches): </label><span><?php echo ($length . ' x ' . $width . ' x ' . $height); ?></span>
             <br>
             <label>Package Value: </label>
             <span><?php echo ('$' . $package_value); ?></span>
-            <br>
-            <h4>Shipping Company: UPS</h4>
-            <h4>Shipping Class: Next Day Air</h4>
             <br>
             <label>Order Number: </label>
             <span><?php echo ($order_number); ?></span>
@@ -156,7 +158,7 @@ ldm29@njit.edu
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.html">Home Page</a>
         </nav>
-            <p>By Luka Mayer</p>
+        <p>By Luka Mayer</p>
     </footer>
     <!-- Poppins Font from https://fonts.google.com/selection/embed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -8,30 +8,29 @@ ldm29@njit.edu
 
 <?php
   // Slide 62
-  if( !isset($name)) { $name = ''; }
-  if( !isset($street_address)) { $street_address = ''; }
-  if( !isset($city)) { $city = ''; }
-  if( !isset($state)) { $state = ''; }
-  if( !isset($zip_code)) { $zip_code = ''; }
-  if( !isset($ship_date)) { $ship_date = ''; }
-  if( !isset($order_number)) { $order_number = ''; }
-  if( !isset($length)) { $length = ''; }
-  if( !isset($width)) { $width = ''; }
-  if( !isset($height)) { $height = ''; }
-  if( !isset($package_value)) { $package_value = ''; }
-
+  if(!isset($name)) { $name = ''; }
+  if(!isset($street_address)) { $street_address = ''; }
+  if(!isset($city)) { $city = ''; }
+  if(!isset($state)) { $state = ''; }
+  if(!isset($zip_code)) { $zip_code = ''; }
+  if(!isset($ship_date)) { $ship_date = ''; }
+  if(!isset($order_number)) { $order_number = ''; }
+  if(!isset($length)) { $length = ''; }
+  if(!isset($width)) { $width = ''; }
+  if(!isset($height)) { $height = ''; }
+  if(!isset($package_value)) { $package_value = ''; }
 ?>
 
 <html>
     <head>
-    <title>Shipping Page</title>
+        <title>Shipping Page</title>
         <link rel="stylesheet" href="styles/lukas_tech_shop.css"/>
-        </head>
         <header>
-            <h1>Shipping Page</h1>
+                <h1>Shipping Page</h1>
         </header>
     </head>
-        <body>
+    <body>
+        <main>
             <h3>Ship to an Address</h3>
             <?php
             if( !empty($error_message) ) {
@@ -41,6 +40,7 @@ ldm29@njit.edu
             }
             ?>
             <!-- https://www.w3schools.com/html/html_form_input_types.asp -->
+            <!-- Takes input for each of the required inputs -->
             <form action="shipping_page_results.php" method = "post">
                 <label>First and Last Name: </label>
                 <input type="text" name="name"
@@ -93,18 +93,19 @@ ldm29@njit.edu
                 <input type="submit" value="Submit"/>
                 <br>
             </form>
-        <footer>
+        </main>
+    </body>
+    <!-- Nav bar -->
+    <footer>
         <h4> Navigation </h4>
         <nav>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.html">Home Page</a>
         </nav>
             <p>By Luka Mayer</p>
-        </footer>
-        </body>
-
-         <!-- Poppins Font from https://fonts.google.com/selection/embed -->
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </footer>
+    <!-- Poppins Font from https://fonts.google.com/selection/embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </html>

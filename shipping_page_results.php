@@ -7,6 +7,7 @@ ldm29@njit.edu
 -->
 
 <?php
+    // Grab each of the variables
     $name = filter_input(INPUT_POST, 'name',  FILTER_SANITIZE_STRING);
     $street_address = filter_input(INPUT_POST, 'street_address',  FILTER_SANITIZE_STRING);
     $city = filter_input(INPUT_POST, 'city',  FILTER_SANITIZE_STRING);
@@ -19,6 +20,8 @@ ldm29@njit.edu
     $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_FLOAT);
     $package_value = filter_input(INPUT_POST, 'package_value', FILTER_VALIDATE_FLOAT);
 
+    // Validates each of the variables, with special attention paid to $state, $zip_code, $length/$width/$height, and $package_value
+    // Essentially just checks for errors and throws messages if encountered
     function validateState($state) {
         $state_list = array("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY");
         
@@ -97,44 +100,44 @@ ldm29@njit.edu
         include('shipping_page.php');
         exit();
     }
-
 ?>
 
 <html>
     <head>
         <title>Shipping Page</title>
         <link rel="stylesheet" href="styles/lukas_tech_shop.css"/>
-        </head>
         <header>
             <h1>Shipping Page Results</h1>
         </header>
-        </head>
     </head>
     <body>
-        <h5>LUKA'S TECH SHOP DATE: <span><?php echo ($ship_date); ?></span></h5>
-        <h5>732-102-6983</h5>
-        <h5>141 SUMMIT ST.</h5>
-        <h5>NEWARK, NJ, 07103</h5>
-        <h4>SHIP TO:</h4>
-        <h4><?php echo (strtoupper($name)); ?></span></h4>
-        <h4><?php echo (strtoupper($street_address)); ?></span></h4>
-        <h4><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span></h4>
-        <h4><?php echo ('UNITED STATES'); ?></span></h4>
-        <img src="images/ups_tracking_nextdayair.png" alt="html image" width = auto/>
-        <h4>Package Dimensions & Value</h4>
-        <label>Dimensions (inches): </label><span><?php echo ($length . ' x ' . $width . ' x ' . $height); ?></span>
-        <br>
-        <label>Package Value: </label>
-        <span><?php echo ('$' . $package_value); ?></span>
-        <br>
-        <h4>Shipping Company: UPS</h4>
-        <h4>Shipping Class: Next Day Air</h4>
-        <br>
-        <label>Order Number: </label>
-        <span><?php echo ($order_number); ?></span>
-        <br>
+        <main>
+            <!-- Display the results in a format similar to a UPS Shipping Label -->
+            <h5>LUKA'S TECH SHOP DATE: <span><?php echo ($ship_date); ?></span></h5>
+            <h5>732-102-6983</h5>
+            <h5>141 SUMMIT ST.</h5>
+            <h5>NEWARK, NJ, 07103</h5>
+            <h4>SHIP TO:</h4>
+            <h4><?php echo (strtoupper($name)); ?></span></h4>
+            <h4><?php echo (strtoupper($street_address)); ?></span></h4>
+            <h4><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span></h4>
+            <h4><?php echo ('UNITED STATES'); ?></span></h4>
+            <img src="images/ups_tracking_nextdayair.png" alt="html image" width = auto/>
+            <h4>Package Dimensions & Value</h4>
+            <label>Dimensions (inches): </label><span><?php echo ($length . ' x ' . $width . ' x ' . $height); ?></span>
+            <br>
+            <label>Package Value: </label>
+            <span><?php echo ('$' . $package_value); ?></span>
+            <br>
+            <h4>Shipping Company: UPS</h4>
+            <h4>Shipping Class: Next Day Air</h4>
+            <br>
+            <label>Order Number: </label>
+            <span><?php echo ($order_number); ?></span>
+            <br>
+        </main>
     </body>
-
+    <!-- Nav bar -->
     <footer>
         <h4> Navigation </h4>
         <nav>
@@ -143,9 +146,8 @@ ldm29@njit.edu
         </nav>
             <p>By Luka Mayer</p>
     </footer>
-    
-        <!-- Poppins Font from https://fonts.google.com/selection/embed -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Poppins Font from https://fonts.google.com/selection/embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </html>

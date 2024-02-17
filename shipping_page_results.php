@@ -4,6 +4,8 @@ Luka Mayer
 IT202 Internet Applications | Section 006
 Phase 1 Assignment: HTML5 and PHP Form
 ldm29@njit.edu 
+
+Version 1.0
 -->
 
 <?php

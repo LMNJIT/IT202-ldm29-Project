@@ -25,6 +25,7 @@ ldm29@njit.edu
     <head>
         <title>Shipping Page</title>
         <link rel="stylesheet" href="styles/lukas_tech_shop.css"/>
+        <link rel="shortcun icon" href="images/shop_logo.png"/>
         <header>
                 <h1>Shipping Page</h1>
         </header>

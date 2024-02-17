@@ -106,6 +106,7 @@ ldm29@njit.edu
     <head>
         <title>Shipping Page</title>
         <link rel="stylesheet" href="styles/lukas_tech_shop.css"/>
+        <link rel="shortcun icon" href="images/shop_logo.png"/>
         <header>
             <h1>Shipping Page Results</h1>
         </header>
@@ -134,6 +135,8 @@ ldm29@njit.edu
                 <span style="margin-left: 50px;"><span><?php echo (strtoupper($street_address)); ?></span><br>
                 <span style="margin-left: 50px;"><span><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span><br>
                 <span style="margin-left: 50px;"><span><?php echo ('UNITED STATES'); ?></span><br>
+                <br><span><?php echo ('TRACKING # 1Z 071 5X1 01 9064 7079'); ?></span><br>
+                <span><?php echo ('SHIPPED BY UPS NEXT DAY AIR'); ?></span><br>
             </p>
             <img src="images/ups_tracking_nextdayair.png" alt="html image" width=auto height=auto style="margin: 1em 1em 0;"/>
             </div>

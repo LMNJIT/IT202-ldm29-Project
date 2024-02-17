@@ -117,27 +117,25 @@ ldm29@njit.edu
             <p class="small" style="display: inline;">
                 LUKA'S TECH SHOP 
             </p>
-            <p class="small" style="display: inline; text-indent: 3em">
-                DATE: <span><?php echo ($ship_date); ?></span>
+            <p class="small" style="display: inline;">
+                <span style="margin-left: 220px;">DATE: <span><?php echo ($ship_date); ?></span></span>
             </p>
-                <p class="small">
-                    732-102-6983
-                    <br>
-                    141 SUMMIT ST.
-                    <br>
-                    NEWARK, NJ, 07103
-                    <br>
-                    SHIP TO:
-                </p>
-                <div style="float: right; width: auto">
-                    <p class="small" style="display: inline-block;">
-                        <span><?php echo (strtoupper($name));?></span><br>
-                        <span><?php echo (strtoupper($street_address)); ?></span><br>
-                        <span><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span><br>
-                        <span><?php echo ('UNITED STATES'); ?></span>
-                    </p>
-                </div>  
-                <img src="images/ups_tracking_nextdayair.png" alt="html image" width=auto height=auto style="margin: 1em 1em 1em 0; padding-top: 100px;"/>
+            <p class="small">
+                732-102-6983
+                <br>
+                141 SUMMIT ST.
+                <br>
+                NEWARK, NJ, 07103
+                <br>
+                SHIP TO:
+            </p>
+            <p class="small" style="display: inline;">
+                <span style="margin-left: 50px;"><span><?php echo (strtoupper($name));?></span><br>
+                <span style="margin-left: 50px;"><span><?php echo (strtoupper($street_address)); ?></span><br>
+                <span style="margin-left: 50px;"><span><?php echo (strtoupper($city. ', ' . $state . ' ' . $zip_code)); ?></span><br>
+                <span style="margin-left: 50px;"><span><?php echo ('UNITED STATES'); ?></span><br>
+            </p>
+            <img src="images/ups_tracking_nextdayair.png" alt="html image" width=auto height=auto style="margin: 1em 1em 0;"/>
             </div>
             <br>
             <h4>Package Dimensions & Value</h4>

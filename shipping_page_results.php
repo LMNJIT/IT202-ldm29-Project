@@ -1,8 +1,8 @@
 <!-- 
 Luka Mayer
-2/16/2024
+2/21/2024
 IT202 Internet Applications | Section 006
-Phase 1 Assignment: HTML5 and PHP Form
+Phase 2 Assignment: Read SQL Data using PHP
 ldm29@njit.edu 
 
 Version 1.0
@@ -107,7 +107,7 @@ Version 1.0
 <html>
     <head>
         <title>Shipping Page</title>
-        <link rel="stylesheet" href="styles/lukas_tech_shop.css"/>
+        <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
         <link rel="shortcun icon" href="images/shop_logo.png"/>
         <header>
             <h1>Shipping Page Results</h1>
@@ -158,8 +158,9 @@ Version 1.0
     <footer>
         <h4> Navigation </h4>
         <nav>
-            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.html">Home Page</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
         </nav>
         <p>By Luka Mayer</p>
     </footer>

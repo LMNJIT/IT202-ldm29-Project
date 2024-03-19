@@ -7,7 +7,8 @@ ldm29@njit.edu
 
 Version 1.0
 
-You're Missing <footer> element in your page that displays the records from the database. Remember as said in the directions (this will be on every phase), these elements should be on every single page you create.
+You're Missing <footer> element in your page that displays the records from the database. Remember as said in the directions (this will be on every phase), these 
+    elements should be on every single page you create.
 
 Consistent banner logo missing in your page that displays the records from the database. That logo you have on your homepage, it should be on every page.
 

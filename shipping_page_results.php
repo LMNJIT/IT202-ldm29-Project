@@ -1,17 +1,11 @@
 <!-- 
 Luka Mayer
-2/21/2024
+3/20/2024
 IT202 Internet Applications | Section 006
-Phase 2 Assignment: Read SQL Data using PHP
+Phase 3 Assignment: Create SQL Data using PHP
 ldm29@njit.edu 
 
 Version 1.0
-
-You're Missing <footer> element in your page that displays the records from the database. Remember as said in the directions (this will be on every phase), these elements should be on every single page you create.
-
-Consistent banner logo missing in your page that displays the records from the database. That logo you have on your homepage, it should be on every page.
-
-Just remember to include these next time
 -->
 
 <?php

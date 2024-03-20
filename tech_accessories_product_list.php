@@ -1,18 +1,11 @@
 <!-- 
 Luka Mayer
-2/21/2024
+3/20/2024
 IT202 Internet Applications | Section 006
-Phase 2 Assignment: Read SQL Data using PHP
+Phase 3 Assignment: Create SQL Data using PHP
 ldm29@njit.edu 
 
 Version 1.0
-
-You're Missing <footer> element in your page that displays the records from the database. Remember as said in the directions (this will be on every phase), these 
-    elements should be on every single page you create.
-
-Consistent banner logo missing in your page that displays the records from the database. That logo you have on your homepage, it should be on every page.
-
-Just remember to include these next time
 -->
 
 <?php
@@ -66,6 +59,7 @@ Just remember to include these next time
     <head>
         <title>My Guitar Shop</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
+        <link rel="shortcun icon" href="images/shop_logo.png"/>
     </head>
     <body>
         <main>
@@ -107,6 +101,20 @@ Just remember to include these next time
             </section>
         </main>
     </body>
+    <footer>
+        <h4> Navigation </h4>
+        <nav>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.html">Home Page</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
+        </nav>
+            <p>By Luka Mayer</p>
+    </footer>
+     <!-- Poppins Font from https://fonts.google.com/selection/embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </html>
 
 <?php 

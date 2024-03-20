@@ -1,8 +1,8 @@
 /*
 Luka Mayer
-2/21/2024
+3/20/2024
 IT202 Internet Applications | Section 006
-Phase 2 Assignment: Read SQL Data using PHP
+Phase 3 Assignment: Create SQL Data using PHP
 ldm29@njit.edu 
 
 Version 1.0

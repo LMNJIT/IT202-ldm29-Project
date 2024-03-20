@@ -1,8 +1,8 @@
 <!-- 
 Luka Mayer
-2/21/2024
+3/20/2024
 IT202 Internet Applications | Section 006
-Phase 2 Assignment: Read SQL Data using PHP
+Phase 3 Assignment: Create SQL Data using PHP
 ldm29@njit.edu 
 
 Version 1.0
@@ -28,6 +28,7 @@ Version 1.0
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.html">Home Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
         </nav>
         <p>By Luka Mayer</p>
     </footer>

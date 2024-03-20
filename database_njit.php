@@ -26,17 +26,15 @@ Version 1.0
 
 <html>
     <head>
-        <title>Product List</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
         <link rel="shortcun icon" href="images/shop_logo.png"/>
-        <header>
-            <h1>Product List Page</h1>
-        </header>
     </head>
     <body>
         <main>
         </main>
     </body>
+    <!-- Not needed for this page (when enabled it simply overlaps 
+    with the footer on product_list page and create_products page)
     <footer>
         <h4> Navigation </h4>
         <nav>
@@ -47,6 +45,7 @@ Version 1.0
         </nav>
         <p>By Luka Mayer</p>
     </footer>
+    -->
     <!-- Poppins Font from https://fonts.google.com/selection/embed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -57,9 +57,12 @@ Version 1.0
 
 <html>
     <head>
-        <title>My Guitar Shop</title>
+        <title>Product List</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
         <link rel="shortcun icon" href="images/shop_logo.png"/>
+        <header>
+            <h1>Product List Page</h1>
+        </header>
     </head>
     <body>
         <main>

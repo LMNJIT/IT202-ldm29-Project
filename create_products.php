@@ -17,44 +17,67 @@ Version 1.0
     $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
     $stock = filter_input(INPUT_POST, 'stock', FILTER_VALIDATE_FLOAT);
     $maxPrice = 5000;
-
+    
     // Validate inputs
     if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
             $name == NULL || $price == NULL || $description == FALSE
             || $stock == NULL) {
         $error = "Invalid product data. Check all fields and try again.";
-        echo "$error <br>";
-        // include('error.php');
     } else if (!is_double($price) || !is_float($price)) {
         $error = "Price must be a double or float. Change price field and try again.";
-        echo "$error <br>";
-    } else if ($maxPrice > 5000) {
+    } else if ($price > $maxPrice) {
         $error = "Price is over the maximum of 5000. Lower price field and try again.";
-        echo "$error <br>";
     } else if ($price < 0) {
         $error = "Price cannot be negative. Raise price field above 0 and try again.";
-        echo "$error <br>";
-    } //else if (CHECK IF UNIQUE) {
-    /*}*/ else {
+    } else {
         require_once('database_njit.php');
 
-        // Add the product to the database  
-        $query = 'INSERT INTO products
-                    (categoryID, productCode, productName, listPrice)
-                VALUES
-                    (:category_id, :code, :name, :price)';
+        // Check for duplicates
+        $query = "SELECT COUNT(*) AS count FROM techaccessories WHERE techaccessoriesCode = :code";
         $statement = $db->prepare($query);
-        $statement->bindValue(':category_id', $category_id);
         $statement->bindValue(':code', $code);
-        $statement->bindValue(':name', $name);
-        $statement->bindValue(':price', $price);
-        $success = $statement->execute();
+        $statement->execute();
+        $duplicateSuccess = $statement->fetch();
         $statement->closeCursor();
-        echo "<p>Your insert statement status is $success</p>";
+
+        if ($duplicateSuccess['count'] > 0) {
+            $error = "Duplicate code, enter a different code that is not already present in the database.";
+        } else {  
+            // Add the product to the database  
+            $query = 'INSERT INTO techaccessories
+                        (techaccessoriesCategoryID, techaccessoriesCode,
+                        techaccessoriesName, description, price, 
+                        techaccessoriesStock, dateCreated)
+                    VALUES
+                        (:category_id, :code, :name, :description, :price, :stock, NOW())';
+            $statement = $db->prepare($query);
+            $statement->bindValue(':category_id', $category_id);
+            $statement->bindValue(':code', $code);
+            $statement->bindValue(':name', $name);
+            $statement->bindValue(':price', $price);
+            $statement->bindValue(':description', $description);
+            $statement->bindValue(':stock', $stock);
+            $success = $statement->execute();
+            $statement->closeCursor();
+            include('create_products_form.php');
+            echo "<h3>Your insert statement status is $success</h3>";
+        }
     }
 ?>
 
 <html>
+    <head>
+        <title>Create Products</title>
+        <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
+        <link rel="shortcun icon" href="images/shop_logo.png"/>
+    </head>
+    <body>
+        <main>
+            <?php if (!empty($error)): include('create_products_form.php');?>
+                <h3>Error: <?php echo $error; ?></h3>
+            <?php endif; ?>
+        </main>
+    </body>
     <footer>
             <h4> Navigation </h4>
             <nav>

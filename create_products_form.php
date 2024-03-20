@@ -23,6 +23,9 @@ Version 1.0
         <title>Product Manager</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
         <link rel="shortcun icon" href="images/shop_logo.png"/>
+        <header>
+            <h1>Product Manager Page</h1>
+        </header>
     </head>
     <body>
         <main>

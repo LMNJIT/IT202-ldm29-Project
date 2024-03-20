@@ -9,12 +9,6 @@ Version 1.0
 -->
 
 <?php
-    /* DEBUGGING ONLY 
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-    */
-    
     // Get the product data
     $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
     $code = filter_input(INPUT_POST, 'code');
@@ -22,7 +16,7 @@ Version 1.0
     $description = filter_input(INPUT_POST, 'description');
     $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
     $stock = filter_input(INPUT_POST, 'stock', FILTER_VALIDATE_FLOAT);
-
+    $maxPrice = 5000;
 
     // Validate inputs
     if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
@@ -31,29 +25,19 @@ Version 1.0
         $error = "Invalid product data. Check all fields and try again.";
         echo "$error <br>";
         // include('error.php');
-    } else {
+    } else if (!is_double($price) || !is_float($price)) {
+        $error = "Price must be a double or float. Change price field and try again.";
+        echo "$error <br>";
+    } else if ($maxPrice > 5000) {
+        $error = "Price is over the maximum of 5000. Lower price field and try again.";
+        echo "$error <br>";
+    } else if ($price < 0) {
+        $error = "Price cannot be negative. Raise price field above 0 and try again.";
+        echo "$error <br>";
+    } //else if (CHECK IF UNIQUE) {
+    /*}*/ else {
         require_once('database_njit.php');
 
-
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
-
-
-
-
-
-        FINISH
         // Add the product to the database  
         $query = 'INSERT INTO products
                     (categoryID, productCode, productName, listPrice)
@@ -67,8 +51,7 @@ GO INTO ASSIGNMENT DOC AND MAKE IT FOLLOW TO A T (STUFF LIKE ERRORS IF OVER MAX)
         $success = $statement->execute();
         $statement->closeCursor();
         echo "<p>Your insert statement status is $success</p>";
-
-}
+    }
 ?>
 
 <html>

@@ -20,18 +20,16 @@ Version 1.0
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Product MManager</title>
+        <title>Product Manager</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
         <link rel="shortcun icon" href="images/shop_logo.png"/>
-        <header>
-            <h2>Add Product</h2>
-        </header>
     </head>
     <body>
         <main>
+        <h2>Add Product</h2>
         <form action="create_products.php" method="post"
               id="create_products_form">
-                                      
+
             <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
@@ -47,15 +45,13 @@ Version 1.0
             <input type="text" name="name"><br>
 
             <label>Description:</label>
-            <input type="text" name="name"><br>
+            <input type="textarea" name="description"><br>
 
             <label>Price:</label>
-            <input type="text" name="price"><br>
+            <input type="number" step=".01" name="price"><br>
 
             <label>Stock:</label>
-            <input type="text" name="price"><br>
-
-            <!-- Reset/Clear button (Optional) -->
+            <input type="number" name="stock"><br>
 
             <input type="submit" value="Add Product"><br>
         </main>

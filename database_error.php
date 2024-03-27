@@ -4,9 +4,9 @@ ignore this file
 
 
 Luka Mayer
-3/20/2024
+3/27/2024
 IT202 Internet Applications | Section 006
-Phase 3 Assignment: Create SQL Data using PHP
+Phase 4 Assignment: PHP Authentication and Delete SQL Data
 ldm29@njit.edu 
 
 Version 1.0

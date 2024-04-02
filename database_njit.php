@@ -9,19 +9,42 @@ Version 1.0
 -->
 
 <?php 
-    // Slide 24
-    $dsn = 'mysql:host=sql1.njit.edu;port=3306;dbname=ldm29';
-    $username = 'ldm29';
-    $password = 'IT202mySQL@';
+    require_once('database_njit.php');
 
-    try {
-        $db = new PDO($dsn, $username, $password);
-    } catch(PDOException $ex) {
-        // -> equivalent of . in x.length() in java
-        $error_message = $ex->getMessage();
-        include('database_error.php');
-        exit();
-    }
+   //function getDB() {
+        $dsn = 'mysql:host=sql1.njit.edu;port=3306;dbname=ldm29';
+        $username = 'ldm29';
+        $password = 'IT202mySQL@';
+    
+        try {
+            $db = new PDO($dsn, $username, $password);
+            // echo '<p>You are connected to the local database.</p>';
+        } catch(PDOException $ex) {
+            // -> equivalent of . in x.length() in java
+            $error_message = $ex->getMessage();
+            include('database_error.php');
+            exit();
+        }
+       // return $db;
+   //}
+
+   //getDB();
+
+    function getDB() {
+        $dsn = 'mysql:host=sql1.njit.edu;port=3306;dbname=ldm29';
+        $username = 'ldm29';
+        $password = 'IT202mySQL@';
+    
+        try {
+            $db = new PDO($dsn, $username, $password);
+        } catch(PDOException $ex) {
+            // -> equivalent of . in x.length() in java
+            $error_message = $ex->getMessage();
+            include('database_error.php');
+            exit();
+        }
+       return $db;
+   }
 ?>
 
 <html>
@@ -38,7 +61,7 @@ Version 1.0
     <footer>
         <h4> Navigation </h4>
         <nav>
-            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.html">Home Page</a>
+            <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>

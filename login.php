@@ -14,7 +14,6 @@ $login_message = 'You must login to view this page.';
         </header>
     </head>
  <body>
-   <h1>My Guitar Shop</h1>
  <main>
    <h1>Login</h1>
    <form action="authenticate.php" method="post">
@@ -38,11 +37,14 @@ $login_message = 'You must login to view this page.';
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
         <?php
             session_start();
-            if (isset($_SESSION['is_valid_admin'])) {
-        ?>
+            //if (isset($_SESSION['is_valid_admin']) && $_SESSION['is_valid_admin']) {
+            if (empty($_SESSION)) {
+            ?>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/login.php">Login</a>
         <?php } else { ?>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/logout.php">Logout</a>
+        <p>Welcome <?php echo $_SESSION['user_info']['firstName'] . ' ' . $_SESSION['user_info']['lastName'] . ' ('
+        . $_SESSION['user_info']['email'] . ')';?><p>
         <?php } ?>
     </nav>
         <p>By Luka Mayer</p>

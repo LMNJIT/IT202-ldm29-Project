@@ -47,15 +47,16 @@ Version 1.0
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
-        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/menu.php">Menu Page</a>
         <?php
             session_start();
-            if (isset($_SESSION['is_valid_admin'])) {
-        ?>
+            //if (isset($_SESSION['is_valid_admin']) && $_SESSION['is_valid_admin']) {
+            if (empty($_SESSION)) {
+            ?>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/login.php">Login</a>
         <?php } else { ?>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/logout.php">Logout</a>
-        <p>Welcome <?php $_SESSION['firstName']; ?> <p>
+        <p>Welcome <?php echo $_SESSION['user_info']['firstName'] . ' ' . $_SESSION['user_info']['lastName'] . ' ('
+        . $_SESSION['user_info']['email'] . ')';?><p>
         <?php } ?>
     </nav>
         <p>By Luka Mayer</p>

@@ -99,14 +99,16 @@ Version 1.0
                 <td><?php echo $product['description']; ?></td>
                 <td><?php echo $product['price']; ?></td>
                 <td><?php echo $product['techaccessoriesStock']; ?></td>
-                <td><form action="http://localhost/LMNJIT/git/IT202-ldm29-Project/delete_products.php" method="post">
-                        <input type="hidden" name="techaccessories_ID"
-                            value="<?php echo $product['techaccessoriesID']; ?>">
-                        <input type="hidden" name="techaccessoriesCategory_ID"
-                            value="<?php echo $product['techaccessoriesCategoryID']; ?>">
-                        <input type="submit" value="Delete">
-                    </form></td>
-                </tr>
+                <?php if (!empty($_SESSION)) { ?>
+                    <td><form action="http://localhost/LMNJIT/git/IT202-ldm29-Project/delete_products.php" method="post">
+                            <input type="hidden" name="techaccessories_ID"
+                                value="<?php echo $product['techaccessoriesID']; ?>">
+                            <input type="hidden" name="techaccessoriesCategory_ID"
+                                value="<?php echo $product['techaccessoriesCategoryID']; ?>">
+                            <input type="submit" value="Delete">
+                        </form></td>
+                    </tr>
+                <?php } ?>
                 <?php endforeach; ?>      
             </table>
             </section>
@@ -116,15 +118,14 @@ Version 1.0
         <h4> Navigation </h4>
         <nav>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
-        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
-        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
         <?php
-            //if (isset($_SESSION['is_valid_admin']) && $_SESSION['is_valid_admin']) {
             if (empty($_SESSION)) {
             ?>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/login.php">Login</a>
         <?php } else { ?>
+        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
+        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/logout.php">Logout</a>
         <p>Welcome <?php echo $_SESSION['user_info']['firstName'] . ' ' . $_SESSION['user_info']['lastName'] . ' ('
         . $_SESSION['user_info']['email'] . ')';?><p>

@@ -27,6 +27,12 @@ Version 1.0
             <h1>Product Manager Page</h1>
         </header>
     </head>
+    <?php
+        if (empty($_SESSION)) {
+            echo "You are not logged in and should not be on this page!";
+        }
+        else { 
+    ?>
     <body>
         <main>
         <h2>Add Product</h2>
@@ -59,20 +65,22 @@ Version 1.0
             <input type="submit" value="Add Product"><br>
         </main>
     </body>
+    <?php
+        }
+    ?>
     <footer>
             <h4> Navigation </h4>
             <nav>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
-        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
-        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
         <?php
             session_start();
-            //if (isset($_SESSION['is_valid_admin']) && $_SESSION['is_valid_admin']) {
             if (empty($_SESSION)) {
             ?>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/login.php">Login</a>
         <?php } else { ?>
+        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/shipping_page.php">Shipping Page</a>
+        <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
         <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/logout.php">Logout</a>
         <p>Welcome <?php echo $_SESSION['user_info']['firstName'] . ' ' . $_SESSION['user_info']['lastName'] . ' ('
         . $_SESSION['user_info']['email'] . ')';?><p>

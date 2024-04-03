@@ -1,6 +1,6 @@
 <!-- 
 Luka Mayer
-3/27/2024
+4/3/2024
 IT202 Internet Applications | Section 006
 Phase 4 Assignment: PHP Authentication and Delete SQL Data
 ldm29@njit.edu 
@@ -11,6 +11,7 @@ Version 1.0
 <?php
     require_once('database_njit.php');
 
+    // function to retrieve db PDO object
     function getDB() {
         $dsn = 'mysql:host=sql1.njit.edu;port=3306;dbname=ldm29';
         $username = 'ldm29';
@@ -28,6 +29,7 @@ Version 1.0
     return $db;
     }
 
+    // impliment techaccessoriesManager category in phpmyadmin (sql)
     function addtechaccesoriesmanager($email, $password, $firstName, $lastName) {
         $db = getDB();
         $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -42,6 +44,7 @@ Version 1.0
         $statement->closeCursor();
     }
 
+    // calling addtechaccesoriesmanager function w/ values
     addtechaccesoriesmanager('luka@lukastechaccessories.com','pass123','Luka','Mayer');
     addtechaccesoriesmanager('maurice@lukastechaccessories.com','mauriceThegeese','Maurice','Geese');
     addtechaccesoriesmanager('diocletian@lukastechaccessories.com','dioDiodio','Diocletian','III');

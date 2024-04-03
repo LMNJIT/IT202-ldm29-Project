@@ -161,6 +161,7 @@ Version 1.0
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
             <?php
+                session_start();
                 if (empty($_SESSION)) {
                 ?>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/login.php">Login</a>

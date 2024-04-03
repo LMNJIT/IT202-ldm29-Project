@@ -35,15 +35,6 @@ Version 1.0
         <title>Admin DB Pg</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
         <link rel="shortcun icon" href="images/shop_logo.png"/>
-        <header>
-            <h1>Admin DB Pg</h1>
-        </header>
-    </head>
-    <body>
-        <main>
-            <p>Not sure why you're here!</p>
-        </main>
-    </body>
     <!-- Nav bar -->
     <footer>
         <h4> Navigation </h4>

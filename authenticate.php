@@ -10,17 +10,12 @@ Version 1.0
 
 <?php
     require_once('admin_db.php');
-    session_start();
     $email = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
     if (is_valid_admin_login($email, $password)) {
     // check valid login,
     // then create valid entry in the $_SESSON global super array
     $_SESSION['is_valid_admin'] = true;
-    // redirect logged in user to default page
-    echo "<p>You have successfully logged in.</p>";
-    echo "<a href='http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php'>Home Page</a>";
-    
     // grab managers_id and set it to the first 
     $managers_id = filter_input(INPUT_GET, 'managers_id', FILTER_VALIDATE_INT);
     // search for emailAddress and append to queryManager
@@ -48,26 +43,26 @@ Version 1.0
 
 <html> 
     <head>
-        <title>Authentication Pg</title>
+        <title>Authentication/Loggedin Pg</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
         <link rel="shortcun icon" href="images/shop_logo.png"/>
         <header>
-            <h1>Authentication Pg</h1>
+            <h1>Authentication/Loggedin Page</h1>
         </header>
     </head>
     <body>
         <main>
-            <p>Not sure why you're here!</p>
+            <p>You have successfully logged in.</p>
         </main>
     </body>
     <!-- Nav bar -->
     <footer>
+        <!-- This is overlayed by admin_db page
         <h4> Navigation </h4>
         <nav>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
             <?php
-                session_start();
                 if (empty($_SESSION)) {
                 ?>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/login.php">Login</a>
@@ -80,6 +75,7 @@ Version 1.0
             <?php } ?>
         </nav>
         <p>By Luka Mayer</p>
+        -->
     </footer>
     <!-- Poppins Font from https://fonts.google.com/selection/embed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

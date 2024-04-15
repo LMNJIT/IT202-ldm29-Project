@@ -11,7 +11,7 @@ Version 1.0
 <?php
     // Slide 37
     // use your chosen database
-    require_once('database_njit.php');
+  /* require_once('database_njit.php');
 
     $techaccessoriesCategoryID = filter_input(INPUT_POST, 'techaccessoriesCategory_ID', FILTER_VALIDATE_INT);
     $techaccessoriesID = filter_input(INPUT_POST, 'techaccessories_ID', FILTER_VALIDATE_INT);
@@ -23,10 +23,34 @@ Version 1.0
         $statement->bindValue(':techaccessoriesID', $techaccessoriesID);
         $success = $statement->execute();
         $statement->closeCursor();
-    }
+    }*/
 ?>
 
 <html> 
+    <script>
+    const confirmDelete = confirm("Are you sure you want to delete this item?");
+    if (confirmDelete) {
+        <?php
+            require_once('database_njit.php');
+
+            $techaccessoriesCategoryID = filter_input(INPUT_POST, 'techaccessoriesCategory_ID', FILTER_VALIDATE_INT);
+            $techaccessoriesID = filter_input(INPUT_POST, 'techaccessories_ID', FILTER_VALIDATE_INT);
+        
+            if($techaccessoriesID != FALSE && $techaccessoriesCategoryID != FALSE) {
+                $query = 'DELETE FROM techaccessories WHERE techaccessoriesID = :techaccessoriesID';
+                // 4 step: prepare, bindValue, execute, close cursor
+                $statement = $db->prepare($query);
+                $statement->bindValue(':techaccessoriesID', $techaccessoriesID);
+                $success = $statement->execute();
+                $statement->closeCursor();
+            }
+        ?>
+        console.log("delete confirmed");
+    }   else {
+            console.log("delete canceled");
+    }
+    confirmDelete();
+    </script>
     <head>
         <title>Delete Products</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
@@ -37,7 +61,17 @@ Version 1.0
     </head>
     <body>
         <main>
-            <p>Your delete worked.</p>
+            <?php 
+                if ($techaccessoriesID || $techaccessoriesCategoryID) {
+            ?>
+                <p>Your delete worked.</p>
+            <?php
+                } else {
+            ?>
+                <p>Your delete failed.</p>
+            <?php
+                }
+            ?>
         </main>
     </body>
     <!-- Nav bar -->

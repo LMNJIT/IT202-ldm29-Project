@@ -109,7 +109,7 @@ Version 1.0
                         </form></td>
                     </tr>
                 <?php } ?>
-                <?php endforeach; ?>      
+                <?php endforeach; ?>    
             </table>
             </section>
         </main>

@@ -72,12 +72,11 @@ Version 1.0
         <link rel="shortcun icon" href="images/shop_logo.png"/>
     </head>
     <body>
-    <main>
-        <?php if (!empty($error)): ?>
-            <h3>Error: <?php echo $error; ?></h3>
-            <script>reset();</script>
-        <?php endif; ?>
-    </main>
+        <main>
+            <?php if (!empty($error)): include('create_products_form.php');?>
+                <h3>Error: <?php echo $error; ?></h3>
+            <?php endif; ?>
+        </main>
     </body>
     <footer>
         <h4> Navigation </h4>

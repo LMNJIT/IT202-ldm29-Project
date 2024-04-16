@@ -32,44 +32,45 @@ $(document).ready( () => {
             $("#name").next().text("This field is required");
             isValid = false;
         } else if (name.length < 10) {
-            $("#name").val("Must be 10 characters or more.");
+            $("#name").next().text("Must be 10 characters or more.");
             isValid = false;
         } else if (name.length > 100) {
-            $("#name").val("Must not exceed 100 characters.");
+            $("#name").next().text("Must not exceed 100 characters.");
             isValid = false;
         } else {
-            $("#name").val("");
+            $("#name").next().text("");
         }
 
-        const description = $("#description").text();
+        const description = $("#description").val();
         if (description == "") {
-            $("#description").text("This field is required.");
+            $("#description").next().text("This field is required.");
             isValid = false;
         } else if (description.length < 10) {
-            $("#description").text("Must be 10 characters or more.");
+            $("#description").next().text("Must be 10 characters or more.");
             isValid = false;
         } else if (description.length > 255) {
-            $("#description").text("Must not exceed 255 characters.");
+            $("#description").next().text("Must not exceed 255 characters.");
             isValid = false;
         } else {
-            $("#description").text("");
+            $("#description").next().text("");
         }
 
         const price = $("#price").val();
+        console.log(price);
         if (!price) {
-            $("#price").val("This field is required.");
+            $("#price").next().text("This field is required.");
             isValid = false;
         } else if (price < 0) {
-            $("#price").val("Must be a positive number.");
+            $("#price").next().text("Must be a positive number.");
             isValid = false;
         } else if (price == 0) {
-            $("#price").val("Must not be 0.");
+            $("#price").next().text("Must not be 0.");
             isValid = false;
         } else if (price > 100000) {
-            $("#price").val("Must not exceed 100,000");
+            $("#price").next().text("Must not exceed 100,000");
             isValid = false;
         } else {
-            $("#price").val("");
+            $("#price").next().text("");
         }
 
         if (isValid == false) {

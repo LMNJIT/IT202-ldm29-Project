@@ -40,7 +40,7 @@ Version 1.0
         <main>
         <h2>Add Product</h2>
         <!-- form to add products and what not (uses create_products to do so) -->
-        <form action="create_products.php" method = "get" id = "create_form">
+        <form action="create_products.php" method = "post" id = "create_form">
             <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
@@ -71,7 +71,6 @@ Version 1.0
 
             <label>Stock:</label>
             <input type="number" id="stock" name="stock">
-            <span>*</span>
             <br>
 
             <input type="button" value="Reset" onclick="resetProducts()"><br>

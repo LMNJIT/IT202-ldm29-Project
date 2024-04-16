@@ -40,9 +40,7 @@ Version 1.0
         <main>
         <h2>Add Product</h2>
         <!-- form to add products and what not (uses create_products to do so) -->
-        <form action="create_products.php" method="post"
-             id="create_products_form"> 
-
+        <form action="create_products_form.php" method = "get" id = "create_form">
             <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
@@ -51,35 +49,38 @@ Version 1.0
                 </option>
             <?php endforeach; ?>
             </select><br>
-
             <label>Code:</label>
-            <input type="text" id="code" name="code" placeholder="At least 4 characters"><br>
+            <input type="text" id="code" name="code">
+            <span>*</span>
+            <br>
 
             <label>Name:</label>
-            <input type="text" id="name" name="name" placeholder="At least 10 characters"><br>
+            <input type="text" id="name" name="name">
+            <span>*</span>
+            <br>
 
             <label>Description:</label>
-            <input type="textarea" id="description" name="description" placeholder="At least 10 characters"><br>
+            <input type="textarea" id="description" name="description">
+            <span>*</span>
+            <br>
 
             <label>Price:</label>
-            <input type="number" id="price" step=".01" name="price" placeholder="Above $0"><br>
+            <input type="number" id="price" step=".01" name="price">
+            <span>*</span>
+            <br>
 
             <label>Stock:</label>
-            <input type="number" id="stock" name="stock"><br>
+            <input type="number" id="stock" name="stock">
+            <span>*</span>
+            <br>
 
-            <input type="button" value="Reset" onclick="reset()">
+            <input type="button" value="Reset" onclick="resetProducts()"><br>
 
             <input type="submit" value="Add Product"><br>
-
             <!-- copy paste CDN from releases.jquery.com -->
-            <script
-            src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-            crossorigin="anonymous">
-            </script>
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
             <!-- copy paste URL from releases.jquery.com-->
             <script src = "create_products.js"></script>
-        </form>
         </main>
     </body>
     <?php

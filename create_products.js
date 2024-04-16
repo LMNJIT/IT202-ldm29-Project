@@ -1,35 +1,35 @@
 // call when resest button pressed; just sets text to "" 
-function reset() {
-    $("#code").next().text("");
-    $("#name").next().text("");
-    $("#description").next().text("");
-    $("#price").next().text("");
-    $("#stock").next().text("");
+function resetProducts() {
+    $("#code").val("");
+    $("#name").val("");
+    $("#description").val("");
+    $("#price").val("");
+    $("#stock").val("");
 }
 
-$(document).ready( (event) => {
+$(document).ready( () => {
     $("#code").focus();
 
-    $("#create_products_form").submit( () => {
+    $("#create_form").submit( () => {
         let isValid = true;
 
-        const productcode = $("#code").val();
-        if (productcode == "") {
-            $("#code").val("This field is required.");
+        const productcode = $("#code").val().trim();
+        if (productcode === "") {
+            $("#code").next().text("This field is required");
             isValid = false;
         } else if (productcode.length < 4) {
-            $("#code").val("Must be 4 characters or more.");
+            $("#code").next().text("Must be 4 characters or more.");
             isValid = false;
         } else if (productcode.length > 10) {
-            $("#code").val("Must not exceed 10 characters.");
+            $("#code").next().text("Must not exceed 10 characters.");
             isValid = false;
         } else {
-            $("#code").val("");
+            $("#code").next().text("");
         }
 
         const name = $("#name").val();
         if (name == "") {
-            $("#name").val("This field is required.");
+            $("#name").next().text("This field is required");
             isValid = false;
         } else if (name.length < 10) {
             $("#name").val("Must be 10 characters or more.");
@@ -41,18 +41,18 @@ $(document).ready( (event) => {
             $("#name").val("");
         }
 
-        const description = $("#description").val();
+        const description = $("#description").text();
         if (description == "") {
-            $("#description").val("");
+            $("#description").text("This field is required.");
             isValid = false;
         } else if (description.length < 10) {
-            $("#description").val("Must be 10 characters or more.");
+            $("#description").text("Must be 10 characters or more.");
             isValid = false;
         } else if (description.length > 255) {
-            $("#description").val("Must not exceed 255 characters.");
+            $("#description").text("Must not exceed 255 characters.");
             isValid = false;
         } else {
-            $("#description").val("");
+            $("#description").text("");
         }
 
         const price = $("#price").val();
@@ -74,6 +74,8 @@ $(document).ready( (event) => {
 
         if (isValid == false) {
             event.preventDefault();
-        } 
+        } else if (isValid == true) {
+
+        }
     });
 });

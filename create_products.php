@@ -17,7 +17,7 @@ Version 1.0
     $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
     $stock = filter_input(INPUT_POST, 'stock', FILTER_VALIDATE_FLOAT);
     $maxPrice = 5000;
-
+    
     // Validate inputs
     if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
             $name == NULL || $price == NULL || $description == FALSE

@@ -56,7 +56,6 @@ $(document).ready( () => {
         }
 
         const price = $("#price").val();
-        console.log(price);
         if (!price) {
             $("#price").next().text("This field is required.");
             isValid = false;
@@ -71,6 +70,23 @@ $(document).ready( () => {
             isValid = false;
         } else {
             $("#price").next().text("");
+        }
+
+        const stock = $("#stock").val();
+        if (!stock) {
+            $("#stock").next().text("This field is required.");
+            isValid = false;
+        } else if (stock < 0) {
+            $("#stock").next().text("Must be a positive number.");
+            isValid = false;
+        } else if (stock == 0) {
+            $("#stock").next().text("Must not be 0.");
+            isValid = false;
+        } else if (stock > 100000) {
+            $("#stock").next().text("Must not exceed 100,000");
+            isValid = false;
+        } else {
+            $("#stock").next().text("");
         }
 
         if (isValid == false) {

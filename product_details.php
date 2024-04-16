@@ -49,13 +49,10 @@ Version 1.0
             <h2>Stock:<?php echo ' ' . $stock?></h2>
 
             <?php if ($product['techaccessoriesCategoryID'] == 1) {?>
-            <img src="images/airpods.png" alt="html image" width="120"/><?php } ?>
+            <img src="images/airpodss.png" alt="<?php echo $product_id?>" width="120"/><?php } ?>
 
-            
-            <?php
-            } else {
-                echo "<p>Product ID unable to be located. Go back to product list and try again.</p>";
-            }?>
+            <?php } else ?>
+                <h3>Error: <?php echo "<p>Product ID unable to be located. Go back to product list and try again.</p>";?></h3>
         </main>
     </body>
     <!-- Nav bar -->

@@ -50,27 +50,28 @@ Version 1.0
             <?php endforeach; ?>
             </select><br>
             <label>Code:</label>
-            <input type="text" id="code" name="code">
+            <input type="text" id="code" name="code" placeholder="At least 4 characters">
             <span>*</span>
             <br>
 
             <label>Name:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" placeholder="At least 10 characters">
             <span>*</span>
             <br>
 
             <label>Description:</label>
-            <input type="textarea" id="description" name="description">
+            <input type="textarea" id="description" name="description" placeholder="At least 10 characters">
             <span>*</span>
             <br>
 
             <label>Price:</label>
-            <input type="number" id="price" step=".01" name="price">
+            <input type="number" id="price" step=".01" name="price" placeholder="1 or more">
             <span>*</span>
             <br>
 
             <label>Stock:</label>
-            <input type="number" id="stock" name="stock">
+            <input type="number" id="stock" name="stock" placeholder="1 or more">
+            <span>*</span>
             <br>
 
             <input type="button" value="Reset" onclick="resetProducts()"><br>

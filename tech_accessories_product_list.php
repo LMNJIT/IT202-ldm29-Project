@@ -57,6 +57,13 @@ Version 1.0
 ?>
 
 <html>
+    <!-- to be called to confirm deletion later -->
+    <script>
+        function deleteConfirmation() {
+            return confirm("Are you sure?");
+        }
+    </script>
+    
     <head>
         <title>Product List</title>
         <link rel="stylesheet" href="styles/lukas_tech_accessories.css"/>
@@ -94,13 +101,14 @@ Version 1.0
                 </tr>
                 <?php foreach ($products as $product) : ?>
                 <tr>
-                <td><?php echo $product['techaccessoriesCode']; ?></td>
+                <td><a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/product_details.php?product_id=<?php echo $product['techaccessoriesID']; ?>">
+                <?php echo $product['techaccessoriesCode']; ?></a></td>
                 <td><?php echo $product['techaccessoriesName']; ?></td>
                 <td><?php echo $product['description']; ?></td>
                 <td><?php echo $product['price']; ?></td>
                 <td><?php echo $product['techaccessoriesStock']; ?></td>
                 <?php if (!empty($_SESSION)) { ?>
-                    <td><form action="http://localhost/LMNJIT/git/IT202-ldm29-Project/delete_products.php" method="post">
+                    <td><form onsubmit="return deleteConfirmation()" action="http://localhost/LMNJIT/git/IT202-ldm29-Project/delete_products.php" method="post">
                             <input type="hidden" name="techaccessories_ID"
                                 value="<?php echo $product['techaccessoriesID']; ?>">
                             <input type="hidden" name="techaccessoriesCategory_ID"

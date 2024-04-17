@@ -47,7 +47,7 @@ Version 1.0
             <h2>Description:<?php echo ' ' . $description?></h2>
             <h2>Price:<?php echo ' $' . $price?></h2>
             <h2>Stock:<?php echo ' ' . $stock?></h2>
-            <?php if (($product['techaccessoriesCategoryID']) >= 1 && ($product['techaccessoriesCategoryID']) <= 5) {?>
+            <?php if ($product['techaccessoriesID'] == $product_id) {?>
                 <img id="rollover_image" src="images/<?php echo $product_id; ?>.jpg" alt="<?php echo $product_id?>" width="120"/>
             <?php } else {?>
                 <h3>Error: Product ID unable to be located. Go back to product list and try again.</h3>

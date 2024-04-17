@@ -3,9 +3,9 @@
 ignore this file
 
 Luka Mayer
-4/3/2024
+4/16/2024
 IT202 Internet Applications | Section 006
-Phase 4 Assignment: PHP Authentication and Delete SQL Data
+Phase 5 Assignment: Read SQL Data with PHP and Javascript
 ldm29@njit.edu 
 
 Version 1.0

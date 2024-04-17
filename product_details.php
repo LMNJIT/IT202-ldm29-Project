@@ -1,8 +1,8 @@
 <!-- 
 Luka Mayer
-4/3/2024
+4/16/2024
 IT202 Internet Applications | Section 006
-Phase 4 Assignment: PHP Authentication and Delete SQL Data
+Phase 5 Assignment: Read SQL Data with PHP and Javascript
 ldm29@njit.edu 
 
 Version 1.0
@@ -43,15 +43,14 @@ Version 1.0
     </head>
     <body>
         <main>
-            <h2>Name:<?php if ($product) { echo ' ' . $name?></h2>
+            <h2>Name: <?php if ($product['techaccessoriesID']) { echo ' ' . $name?></h2>
             <h2>Description:<?php echo ' ' . $description?></h2>
             <h2>Price:<?php echo ' $' . $price?></h2>
             <h2>Stock:<?php echo ' ' . $stock?></h2>
-            <?php if ($product['techaccessoriesID'] == $product_id) {?>
-                <img id="rollover_image" src="images/<?php echo $product_id; ?>.jpg" alt="<?php echo $product_id?>" width="120"/>
-            <?php } else {?>
+            <img id="rollover_image" src="images/<?php echo $product_id; ?>.jpg" alt="<?php echo $product_id?>" width="120"/>
+            <?php } else { ?>
                 <h3>Error: Product ID unable to be located. Go back to product list and try again.</h3>
-            <?php } } ?>
+            <?php } ?>
         </main>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src = "rollover.js"></script>

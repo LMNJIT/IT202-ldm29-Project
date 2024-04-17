@@ -37,7 +37,6 @@ Version 1.0
         } else {
         $login_message = 'Invalid credentials.';
         }
-        include('login.php');
     }
 ?>
 
@@ -51,13 +50,18 @@ Version 1.0
         </header>
     </head>
     <body>
-        <main>
-            <p>You have successfully logged in.</p>
-        </main>
-    </body>
+    <main>
+        <?php
+        if (isset($login_message)) {
+            echo "<p>Error: $login_message</p>";
+        } else {
+            echo "<p>You have successfully logged in.</p>";
+        }
+        ?>
+    </main>
+</body>
     <!-- Nav bar -->
     <footer>
-        <!-- This is overlayed by admin_db page
         <h4> Navigation </h4>
         <nav>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/home_page.php">Home Page</a>
@@ -75,7 +79,6 @@ Version 1.0
             <?php } ?>
         </nav>
         <p>By Luka Mayer</p>
-        -->
     </footer>
     <!-- Poppins Font from https://fonts.google.com/selection/embed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

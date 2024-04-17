@@ -8,5 +8,4 @@ img.addEventListener('mouseover', function() {
 img.addEventListener('mouseout', function() {
     img.classList.remove('changeImg');
     console.log(img.classList);
-
 });

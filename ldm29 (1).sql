@@ -1,7 +1,7 @@
--- Luka Mayer
+ -- Luka Mayer
 -- 4/16/2024
 -- IT202 Internet Applications | Section 006
--- Phase 5 Assignment: Read SQL Data with PHP and JavaScript
+-- Phase 5 Assignment: Read SQL Data with PHP and Javascript
 -- ldm29@njit.edu 
 -- Version 1.0
 
@@ -10,7 +10,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Apr 03, 2024 at 02:54 AM
+-- Generation Time: Apr 17, 2024 at 02:19 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -26,6 +26,70 @@ SET time_zone = "+00:00";
 --
 -- Database: `ldm29`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `administrators`
+--
+
+CREATE TABLE IF NOT EXISTS `administrators` (
+`adminID` int(11) NOT NULL,
+  `emailAddress` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstName` varchar(60) DEFAULT NULL,
+  `lastName` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `administrators`
+--
+
+INSERT INTO `administrators` (`adminID`, `emailAddress`, `password`, `firstName`, `lastName`) VALUES
+(1, 'admin@myguitarshop.com', '$2y$10$xIqN2cVy8HVuKNKUwxFQR.xRP9oRj.FF8r52spVc.XCaEFy7iLHmu', 'Admin', 'User'),
+(2, 'joel@murach.com', '$2y$10$xIqN2cVy8HVuKNKUwxFQR.xRP9oRj.FF8r52spVc.XCaEFy7iLHmu', 'Joel', 'Murach'),
+(3, 'mike@murach.com', '$2y$10$xIqN2cVy8HVuKNKUwxFQR.xRP9oRj.FF8r52spVc.XCaEFy7iLHmu', 'Mike', 'Murach'),
+(4, 'ldm29@njit.edu', 'pass321', 'L', 'M');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+`categoryID` int(11) NOT NULL,
+  `categoryName` varchar(255) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
+(1, 'Guitars'),
+(2, 'Basses'),
+(3, 'Drums'),
+(4, 'Piano');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE IF NOT EXISTS `orders` (
+`orderID` int(11) NOT NULL,
+  `customerID` int(11) NOT NULL,
+  `orderDate` datetime NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderID`, `customerID`, `orderDate`) VALUES
+(1, 1, '2024-02-14 10:48:10');
 
 -- --------------------------------------------------------
 
@@ -76,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `techaccessories` (
   `price` decimal(10,2) NOT NULL,
   `techaccessoriesStock` int(11) NOT NULL,
   `dateCreated` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=66 ;
 
 --
 -- Dumping data for table `techaccessories`
@@ -87,7 +151,6 @@ INSERT INTO `techaccessories` (`techaccessoriesID`, `techaccessoriesCategoryID`,
 (2, 1, 'sony', 'Sony WF-100XM5', 'The best wireless earbuds shipped by Sony.', 299.00, 17, '2024-02-21 19:36:43'),
 (3, 1, 'jabra', 'Jabra Elite 8 Active', 'The best wireless earbuds for active workouts.', 199.00, 5, '2024-02-21 19:38:10'),
 (4, 1, 'creative', 'Creative Aurvana Ace 2', 'Unique design with excellent audio.', 149.00, 8, '2024-02-21 19:39:55'),
-(5, 1, 'anker', 'Anker Soundcore Liberty 4 NC', 'Wireless earbuds at an affordable price.', 99.00, 3, '2024-02-21 19:40:52'),
 (6, 2, 'aerstand', 'Elite Laptop Stand', 'An elite laptop stand designed to hold heavy laptops.', 56.53, 7, '2024-04-02 20:05:49'),
 (7, 2, 'macstand', 'Aether Mac Stand', 'Elegant laptop stand designed for an apple user.', 156.53, 4, '2024-04-02 20:06:29'),
 (8, 2, 'affordable', 'Affordable Stand', 'Affordable laptop stand for those that enjoy great value.', 23.10, 21, '2024-04-02 20:07:09'),
@@ -105,8 +168,10 @@ INSERT INTO `techaccessories` (`techaccessoriesID`, `techaccessoriesCategoryID`,
 (22, 5, 'troubadour', 'Troubador Apex 3.0 Backpack', 'Ergonomic, well designed, and beautiful.', 245.00, 17, '2024-02-21 20:52:58'),
 (23, 5, 'timbuk2', 'Timbuk2 Authority Laptop Backpack', 'A laptop backpack which caters to the rugged adventurer.', 159.00, 12, '2024-02-21 20:53:47'),
 (24, 5, 'july', 'July Carry All Backpack', 'Awesome for those who travel often! Very affordable as well.', 44.00, 6, '2024-02-21 20:54:42'),
-(25, 5, 'everlane', 'Everlane The ReNew Transit Backpack', 'Environmentally friendly, cute, and functional!', 95.00, 9, '2024-02-21 20:55:23'),
-(44, 1, 'iphoneCh', 'iphoneCharger', 'Charge your iphone.', 56.00, 5, '2024-03-20 19:41:11');
+(48, 5, 'everlane', 'Everlane The ReNew Transit Backpack	', 'Environmentally friendly, cute, and functional!	', 95.00, 9, '2024-04-02 23:45:00'),
+(66, 1, 'anker', 'Anker Soundcore Liberty 4 NC', 'Wireless earbuds at an affordable price.', 55.00, 3, '2024-04-16 21:09:27'),
+(75, 2, 'razerSt', 'Razer Laptop Stand', 'New razer laptop stand to hold up your expensive Macbook.', 37.00, 7, '2024-04-16 22:12:38'),
+(76, 4, 'keychr', 'Keychron wireless 65% ', 'Short, small keyboard that is very transportable.', 54.00, 3, '2024-04-16 22:15:09');
 
 -- --------------------------------------------------------
 
@@ -118,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `techaccessoriesCategories` (
 `techaccessoriesCategoryID` int(11) NOT NULL,
   `techaccessoriesCategoryName` varchar(64) NOT NULL,
   `dateCreated` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `techaccessoriesCategories`
@@ -144,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `techaccessoriesManagers` (
   `firstName` varchar(60) NOT NULL,
   `lastName` varchar(60) NOT NULL,
   `dateCreated` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `techaccessoriesManagers`
@@ -158,6 +223,24 @@ INSERT INTO `techaccessoriesManagers` (`techaccessoriesManagerID`, `emailAddress
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `administrators`
+--
+ALTER TABLE `administrators`
+ ADD PRIMARY KEY (`adminID`), ADD UNIQUE KEY `emailAddress` (`emailAddress`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+ ADD PRIMARY KEY (`categoryID`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+ ADD PRIMARY KEY (`orderID`);
 
 --
 -- Indexes for table `products`
@@ -188,6 +271,21 @@ ALTER TABLE `techaccessoriesManagers`
 --
 
 --
+-- AUTO_INCREMENT for table `administrators`
+--
+ALTER TABLE `administrators`
+MODIFY `adminID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
@@ -196,7 +294,7 @@ MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 -- AUTO_INCREMENT for table `techaccessories`
 --
 ALTER TABLE `techaccessories`
-MODIFY `techaccessoriesID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
+MODIFY `techaccessoriesID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
 --
 -- AUTO_INCREMENT for table `techaccessoriesCategories`
 --

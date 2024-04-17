@@ -141,3 +141,11 @@ form label {
 br {
     clear: left;
 }
+
+.changeImg {
+    filter: grayscale(100%);
+}
+
+li {
+    display: inline;
+}

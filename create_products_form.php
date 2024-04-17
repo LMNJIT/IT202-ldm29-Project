@@ -77,9 +77,7 @@ Version 1.0
             <input type="button" value="Reset" onclick="resetProducts()"><br>
 
             <input type="submit" value="Add Product"><br>
-            <!-- copy paste CDN from releases.jquery.com -->
             <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-            <!-- copy paste URL from releases.jquery.com-->
             <script src = "create_products.js"></script>
         </main>
     </body>

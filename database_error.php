@@ -21,7 +21,7 @@ ignore this file
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/tech_accessories_product_list.php">Product List</a>
             <a href="http://localhost/LMNJIT/git/IT202-ldm29-Project/create_products_form.php">Product Manager (Add Products)</a>
         </nav>
-        <p>By Luka Mayer</p>
+        <p>By L M</p>
     </footer>
      Poppins Font from https://fonts.google.com/selection/embed 
     <link rel="preconnect" href="https://fonts.googleapis.com">

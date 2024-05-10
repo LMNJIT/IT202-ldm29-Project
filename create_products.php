@@ -85,7 +85,7 @@
                 . $_SESSION['user_info']['email'] . ')';?><p>
             <?php } ?>
         </nav>
-        <p>By Luka Mayer</p>
+        <p>By L M</p>
     </footer>
     <!-- Poppins Font from https://fonts.google.com/selection/embed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -1,13 +1,3 @@
-<!-- 
-Luka Mayer
-4/16/2024
-IT202 Internet Applications | Section 006
-Phase 5 Assignment: Read SQL Data with PHP and Javascript
-ldm29@njit.edu 
-
-Version 1.0
--->
-
 <?php
     // Get the product data
     $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);

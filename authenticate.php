@@ -1,13 +1,3 @@
-<!-- 
-Luka Mayer
-4/16/2024
-IT202 Internet Applications | Section 006
-Phase 5 Assignment: Read SQL Data with PHP and Javascript
-ldm29@njit.edu 
-
-Version 1.0
--->
-
 <?php
     require_once('admin_db.php');
     $email = filter_input(INPUT_POST, 'email');
